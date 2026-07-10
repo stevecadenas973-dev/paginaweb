@@ -24,11 +24,68 @@
         </ul>
     </nav>
 
+    <!-- ============================================================
+         PROMOCIÓN DEL DÍA
+         - Para que el CLIENTE la pueda cerrar: ya tiene un botón "×".
+         - Para QUITARLA del todo (tú, editando el código): baja hasta
+           el <script> que dice "mostrarPromo" y cámbialo a false.
+           No hace falta borrar nada de este bloque.
+    ============================================================= -->
+    <section class="producto-dia" id="promoDia">
+
+        <button class="btn-cerrar-promo" id="cerrarPromo" aria-label="Cerrar promoción" title="Cerrar">&times;</button>
+
+        <div class="producto-dia-img">
+            <img src="img/cangrejo.jpg" alt="Producto del Día">
+        </div>
+
+        <div class="producto-dia-info">
+            <span class="etiqueta">🔥 PRODUCTO DEL DÍA</span>
+
+            <h2>Cangrejo Real Premium</h2>
+
+            <p>
+                Nuestro plato estrella del día. Cangrejo real fresco,
+                preparado con especias especiales y acompañado de guarnición
+                de la casa.
+            </p>
+
+            <div class="precio-dia">
+                <del>$60.000</del>
+                <span>$49.900</span>
+            </div>
+
+            <a href="#" class="btn-dia">Pedir Ahora</a>
+        </div>
+
+    </section>
+    <script>
+        // Cambia esta línea a "false" si quieres desactivar la promo
+        // por completo (para todos los visitantes, sin botón de cierre).
+        const mostrarPromo = true;
+
+        const promoDia = document.getElementById('promoDia');
+
+        if (!mostrarPromo) {
+            promoDia.style.display = 'none';
+        } else {
+            // Si el visitante ya la cerró en esta sesión, no volver a mostrarla
+            if (sessionStorage.getItem('promoCerrada') === 'true') {
+                promoDia.style.display = 'none';
+            }
+            document.getElementById('cerrarPromo').addEventListener('click', () => {
+                promoDia.style.display = 'none';
+                sessionStorage.setItem('promoCerrada', 'true');
+            });
+        }
+    </script>
+    <!-- ===================== FIN PROMOCIÓN DEL DÍA ===================== -->
+
     <div class="contenedor">
 
         <div class="slider">
             <div class="slider-img-wrap">
-                <img id="imagen" src="img/centollo.jpg" alt="Centollo">
+                <img id="imagen" src="img/centolio.jpg" alt="Centollo">
             </div>
             <div class="dots" id="dots"></div>
         </div>

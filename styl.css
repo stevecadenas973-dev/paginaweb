@@ -30,6 +30,9 @@ nav{
     position:sticky;
     top:0;
     z-index:500;
+    margin:0 20px;
+    border-radius:0 0 14px 14px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
 }
 
 nav ul{
@@ -37,6 +40,14 @@ nav ul{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+@media (max-width:600px){
+    nav{
+        margin:0 10px;
+    }
 }
 
 nav ul li{
@@ -432,6 +443,7 @@ nav ul li .btn-integrantes {
 /* PRODUCTO DEL DIA */
 
 .producto-dia{
+    position:relative;
     width:90%;
     max-width:1200px;
     margin:40px auto;
@@ -442,6 +454,30 @@ nav ul li .btn-integrantes {
     padding:25px;
     border-radius:15px;
     box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.btn-cerrar-promo{
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:30px;
+    height:30px;
+    border:none;
+    border-radius:50%;
+    background:#f0f0f0;
+    color:#555;
+    font-size:18px;
+    line-height:1;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:background .2s ease, color .2s ease;
+}
+
+.btn-cerrar-promo:hover{
+    background:#e74c3c;
+    color:white;
 }
 
 .producto-dia-img img{
