@@ -538,3 +538,81 @@ nav ul li .btn-integrantes {
 .btn-dia:hover{
     background:#27ae60;
 }
+/* POPUP PRODUCTO DEL DÍA */
+
+.popup-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.65);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.popup-producto{
+    width:90%;
+    max-width:850px;
+    background:white;
+    border-radius:18px;
+    display:flex;
+    overflow:hidden;
+    position:relative;
+    animation:popup .4s ease;
+    box-shadow:0 10px 35px rgba(0,0,0,.4);
+}
+
+.popup-producto img{
+    width:45%;
+    object-fit:cover;
+}
+
+.popup-info{
+    padding:35px;
+    flex:1;
+}
+
+.cerrar-popup{
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:35px;
+    height:35px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    background:#eee;
+    font-size:22px;
+}
+
+.cerrar-popup:hover{
+    background:#e74c3c;
+    color:white;
+}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@media(max-width:768px){
+
+.popup-producto{
+    flex-direction:column;
+}
+
+.popup-producto img{
+    width:100%;
+    height:220px;
+}
+
+}
