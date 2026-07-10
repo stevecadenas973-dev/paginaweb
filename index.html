@@ -24,22 +24,17 @@
         </ul>
     </nav>
 
-    <!-- ============================================================
-         PROMOCIÓN DEL DÍA
-         - Para que el CLIENTE la pueda cerrar: ya tiene un botón "×".
-         - Para QUITARLA del todo (tú, editando el código): baja hasta
-           el <script> que dice "mostrarPromo" y cámbialo a false.
-           No hace falta borrar nada de este bloque.
-    ============================================================= -->
-    <section class="producto-dia" id="promoDia">
+   <!-- POPUP PRODUCTO DEL DÍA -->
+<div id="popupProducto" class="popup-overlay">
 
-        <button class="btn-cerrar-promo" id="cerrarPromo" aria-label="Cerrar promoción" title="Cerrar">&times;</button>
+    <div class="popup-producto">
 
-        <div class="producto-dia-img">
-            <img src="img/cangrejo.jpg" alt="Producto del Día">
-        </div>
+        <button class="cerrar-popup" onclick="cerrarPopup()">&times;</button>
 
-        <div class="producto-dia-info">
+        <img src="img/cangrejo.jpg" alt="Producto del Día">
+
+        <div class="popup-info">
+
             <span class="etiqueta">🔥 PRODUCTO DEL DÍA</span>
 
             <h2>Cangrejo Real Premium</h2>
@@ -56,8 +51,12 @@
             </div>
 
             <a href="#" class="btn-dia">Pedir Ahora</a>
+
         </div>
 
+    </div>
+
+</div>
     </section>
     <script>
         // Cambia esta línea a "false" si quieres desactivar la promo
